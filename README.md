@@ -18,3 +18,6 @@ Note:
 http://whirlysworld.blogspot.com/2013/08/blocking-internet-at-specific-times.html
 
 
+This is a known bug in CC, it is not the version of iptables but something missing from the kernel. 
+In DD/trunk the scheduler uses system time properly. 
+
