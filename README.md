@@ -18,5 +18,5 @@ http://whirlysworld.blogspot.com/2013/08/blocking-internet-at-specific-times.htm
 
 To install, download the .ipk file to your device, the run opkg install luci-app-accesscontrol_1.2_all.ipk
 
-
+<img src="https://raw.githubusercontent.com/augustgermar/luci-app-accesscontrol/master/access-screenshot.png">
 
