@@ -7,11 +7,13 @@ include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI Access Control Configuration
 PKG_NAME:=luci-app-accesscontrol
-PKG_VERSION:=1.1
+PKG_VERSION:=1.2
 PKG_RELEASE=$(PKG_SOURCE_VERSION)
 PKG_MAINTAINER:=August Germar <august@anonabox.com>
 LUCI_DEPENDS:=
 
-include ../../luci.mk
+# this is a custom filepath obviously
+include /home/anonabox/dev/pro/openwrt/feeds/luci/luci.mk
+#include ../../luci.mk
 #
 # call BuildPackage - OpenWrt buildroot signature

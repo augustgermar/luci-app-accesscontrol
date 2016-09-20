@@ -16,9 +16,13 @@ local CONFIG_FILE_RULES = "firewall"
 local CONFIG_FILE_AC    = "access_control"
 local ma, mr, s, o
 
-ma = Map(CONFIG_FILE_AC, translate("Internet Access Control"),
-    translate("Access Control allows you to manage internet access for specific local hosts.<br/>\
+ma = Map(CONFIG_FILE_AC, translate("Internet Access Schedule Control"),
+    translate("Access Schedule Control allows you to manage Internet access for specific local hosts.<br/>\
        Each rule defines which user has blocked access to the internet. The rules may be active permanently or in certain time of day.<br/>\
+       Use the dropdown menu under MAC address (Computer Name) to select which device you would like to make a schedule for, then a start and stop time and days of the week. <br/>\
+       Start and End times are notated in 24 hour (military) time based on UTC. <br/> \
+       UTC is always the same regardless of what timezone you are in, for example, if you are in California (PST timezone) and it is 11am, UTC is currently 6pm, which you would put into the Start or End time fields as 18:00. <br/>\
+       To check what time it is in UTC right now, click <a href=\"https://www.timeanddate.com/worldclock/timezone/utc\"> here. </a>  <br/> \
        The rules may also be restricted to specific days of the week."))
 if CONFIG_FILE_AC==CONFIG_FILE_RULES then
     mr = ma
@@ -86,7 +90,7 @@ s = mr:section(TypedSection, "rule", translate("Client Rules"))
 --            return val
 --        end
         
-     o = s:option(Value, "src_mac", "MAC address") 
+     o = s:option(Value, "src_mac", "MAC address (Computer Name) ") 
         o.rmempty = false
         o.datatype = "macaddr"
         luci.sys.net.mac_hints(function(mac, name)
