@@ -13,7 +13,6 @@ PKG_MAINTAINER:=August Germar <august@anonabox.com>
 LUCI_DEPENDS:=
 
 # this is a custom filepath obviously
-include /home/anonabox/dev/pro/openwrt/feeds/luci/luci.mk
-#include ../../luci.mk
+include ../../luci.mk
 #
 # call BuildPackage - OpenWrt buildroot signature
